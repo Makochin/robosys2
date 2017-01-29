@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+"""
 MIT License
 
 Copyright (c) 2017 Takuya Nogami
@@ -19,3 +22,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+import rospy
+from std_msgs.msg import String
+
+if __name__ == "__main__":
+	rospy.init_node("morse_input")
+	pub = rospy.Publisher("morse_input", String, queue_size=10)
+	while not rospy.is_shutdown():
+		ms = raw_input("morse > ")
+		pub.publish(ms)
+		rospy.sleep(0.01)
