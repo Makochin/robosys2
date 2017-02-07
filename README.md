@@ -3,6 +3,6 @@
 
 ##実行例
 
-<$ rosrun robosys2 mor
-$rosrun>
+< $ rosrun robosys2 morse  
+$rosrun >
 <> 
